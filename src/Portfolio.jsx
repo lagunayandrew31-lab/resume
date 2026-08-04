@@ -222,17 +222,9 @@ export default function Portfolio() {
                 I am seeking an entry-level IT position to gain experience and contribute to the team. My internship at Medrozo IT Solutions gave me hands-on experience in hardware/software support, web development, fiber optic cable splicing, and network operations.
               </p>
               <div className="about-info-grid">
-                <div className="about-info-item">
+                <div className="about-info-item about-info-item--name">
                   <span className="about-info-label">Name</span>
                   <span className="about-info-value">John Andrew Castillano</span>
-                </div>
-                <div className="about-info-item">
-                  <span className="about-info-label">Email</span>
-                  <span className="about-info-value">lagunayandrew31@gmail.com</span>
-                </div>
-                <div className="about-info-item">
-                  <span className="about-info-label">Phone</span>
-                  <span className="about-info-value">09657746095</span>
                 </div>
                 <div className="about-info-item">
                   <span className="about-info-label">Location</span>
@@ -241,10 +233,6 @@ export default function Portfolio() {
                 <div className="about-info-item">
                   <span className="about-info-label">Degree</span>
                   <span className="about-info-value">BS Information Technology</span>
-                </div>
-                <div className="about-info-item">
-                  <span className="about-info-label">Status</span>
-                  <span className="about-info-value">Open to work</span>
                 </div>
               </div>
             </div>

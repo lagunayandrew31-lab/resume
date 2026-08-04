@@ -405,6 +405,11 @@ body {
   text-align: center;
 }
 
+.about-info-item--name .about-info-value {
+  color: var(--primary);
+  font-size: 16px;
+}
+
 .about-info-label {
   display: block;
   font-size: 12px;
