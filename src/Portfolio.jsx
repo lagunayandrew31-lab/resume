@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Portfolio.css';
 
-
 /*
   Modern Portfolio for John Andrew Castillano
   Inspired by clean purple-accent portfolio design
@@ -14,7 +13,6 @@ import './Portfolio.css';
   5. Run: npm run dev
 */
 
-// Inline SVG Icons
 const MailIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
@@ -141,7 +139,6 @@ export default function Portfolio() {
 
   return (
     <div className="portfolio">
-      {/* Top Bar */}
       <div className="top-bar">
         <div className="top-bar-inner">
           <span className="top-bar-badge">
@@ -155,10 +152,8 @@ export default function Portfolio() {
         </div>
       </div>
 
-      {/* Navigation */}
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="navbar-inner">
-          <div className="navbar-brand">JAC</div>
           <ul className="navbar-menu">
             {navItems.map((item) => (
               <li key={item.id}>
@@ -177,70 +172,48 @@ export default function Portfolio() {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section id="home" className="hero">
         <div className="hero-inner">
           <div className="hero-content">
             <div className="hero-greeting">Hello, I am John Andrew Castillano</div>
-            <h1 className="hero-title">
-              <span className="hero-line">DESIGN<span className="hero-plus">+</span></span>
-              <span className="hero-line">DEVELOP<span className="hero-plus">+</span></span>
-              <span className="hero-line">INTERACTIVE<span className="hero-plus">+</span></span>
-              <span className="hero-line">CODE<span className="hero-plus">+</span></span>
-            </h1>
-            <p className="hero-desc">
-              Motivated and detail-oriented Information Technology graduate with a strong foundation in web development and programming. Knowledgeable in basic troubleshooting and computer systems. Willing to learn, adapt, and committed to improving skills.
-            </p>
+            <h1 className="hero-title"><span className="hero-line">DESIGN<span className="hero-plus">+</span></span><span className="hero-line">DEVELOP<span className="hero-plus">+</span></span><span className="hero-line">INTERACTIVE<span className="hero-plus">+</span></span><span className="hero-line">CODE<span className="hero-plus">+</span></span></h1>
+            <p className="hero-desc">Motivated and detail-oriented Information Technology graduate with a strong foundation in web development and programming. Knowledgeable in basic troubleshooting and computer systems. Willing to learn, adapt, and committed to improving skills.</p>
             <div className="hero-buttons">
-              <a href="#contact" className="btn btn-outline" onClick={(e) => { e.preventDefault(); scrollTo('contact'); }}>
-                Hire Me Now
-              </a>
-              <a href="/resume.pdf" download className="btn btn-primary">
-                <DownloadIcon /> Download CV
-              </a>
+              <a href="#contact" className="btn btn-outline" onClick={(e) => { e.preventDefault(); scrollTo('contact'); }}>Hire Me Now</a>
+              <a href="/resume.pdf" download className="btn btn-primary"><DownloadIcon /> Download CV</a>
             </div>
           </div>
-            <div className="hero-image">
-                <img src="/Castillano.jpg" alt="Castillano" className="hero-photo" />
-            </div>
+          <div className="hero-image">
+            <img src="/Castillano.jpg" alt="Castillano" className="hero-photo" />
+          </div>
         </div>
       </section>
 
-      {/* About Section */}
       <section id="about" className="section about-section">
         <div className="section-inner">
           <div className="section-header">
             <span className="section-label">About me</span>
-            <h2 className="section-title">Professional Summary</h2>
+  
           </div>
           <div className="about-content">
             <div className="about-text">
               <p>
-                I am a motivated and detail-oriented Information Technology graduate with a strong foundation in web development and programming. Knowledgeable in basic troubleshooting and computer systems, I am willing to learn, adapt, and committed to improving my skills.
+                I am a dedicated and detail-oriented Information Technology graduate with a strong passion for web development and software engineering. I enjoy transforming ideas into responsive, user-friendly, and scalable web applications while writing clean, maintainable, and efficient code. I am committed to continuous learning and strive to stay current with modern technologies and industry best practices.
               </p>
               <p>
-                I am seeking an entry-level IT position to gain experience and contribute to the team. My internship at Medrozo IT Solutions gave me hands-on experience in hardware/software support, web development, fiber optic cable splicing, and network operations.
+                My technical expertise includes HTML, CSS, JavaScript, React, PHP, Laravel, MySQL, and Git/GitHub. Through internships and academic projects, I have gained practical experience in web development, technical support, hardware and software troubleshooting, and basic networking. These experiences have strengthened my problem-solving abilities, adaptability, and collaboration skills in both independent and team environments.
               </p>
-              <div className="about-info-grid">
-                <div className="about-info-item about-info-item--name">
-                  <span className="about-info-label">Name</span>
-                  <span className="about-info-value">John Andrew Castillano</span>
-                </div>
-                <div className="about-info-item">
-                  <span className="about-info-label">Location</span>
-                  <span className="about-info-value">Kauswagan, Cagayan De Oro City</span>
-                </div>
-                <div className="about-info-item">
-                  <span className="about-info-label">Degree</span>
-                  <span className="about-info-value">BS Information Technology</span>
-                </div>
-              </div>
+              <p>
+                As recognition of my dedication to programming and technical excellence, I was honored with the <strong>Programmer of the Year</strong> award and became a <strong>Codefest Champion</strong>, achievements that reflect my passion for developing innovative solutions and continuously improving my skills.
+              </p>
+              <p>
+                I am currently seeking opportunities as a <strong>Junior Web Developer</strong> where I can contribute to meaningful projects, learn from experienced professionals, and grow into a well-rounded software engineer. My goal is to build technology that delivers real value while continuing to expand my knowledge and make a positive impact within every team I join.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Skills Section */}
       <section id="skills" className="section skills-section">
         <div className="section-inner">
           <div className="section-header">
@@ -258,7 +231,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Experience Section */}
       <section id="experience" className="section experience-section">
         <div className="section-inner">
           <div className="section-header">
@@ -285,7 +257,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Education Section */}
       <section id="education" className="section education-section">
         <div className="section-inner">
           <div className="section-header">
@@ -307,7 +278,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Certifications Section */}
       <section id="certifications" className="section certs-section">
         <div className="section-inner">
           <div className="section-header">
@@ -329,7 +299,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Contact Section */}
       <section id="contact" className="section contact-section">
         <div className="section-inner">
           <div className="section-header">
@@ -355,12 +324,11 @@ export default function Portfolio() {
           </div>
           <div className="contact-cta">
             <p>I am open to entry-level IT positions, internships, and freelance web development opportunities.</p>
-            <a href="mailto:lagunayandrew31@gmail.com" className="btn btn-primary">Send Message</a>
+            <a href="https://www.gmail.com" className="btn btn-primary">Send Message</a>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="footer">
         <p>John Andrew Castillano &copy; {new Date().getFullYear()}. All rights reserved.</p>
       </footer>
