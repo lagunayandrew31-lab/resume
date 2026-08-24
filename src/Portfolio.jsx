@@ -130,6 +130,11 @@ const Icon = {
       <path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8" />
     </svg>
   ),
+  Expand: (p) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}>
+      <path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M16 21h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
+    </svg>
+  ),
 };
 
 /* ============================================================
@@ -248,6 +253,7 @@ const PROJECTS = [
     name: 'React Native Mobile Application',
     category: 'Cross-Platform Mobile',
     mockup: 'mobile',
+    video: '/mobile.mp4',
     summary:
       'A cross-platform mobile app delivering a native-feeling experience on both Android and iOS.',
     problem:
@@ -809,7 +815,58 @@ function Skills() {
 /* ============================================================
    Projects
    ============================================================ */
+function requestFs(el) {
+  const fn = el.requestFullscreen || el.webkitRequestFullscreen;
+  if (fn) fn.call(el).catch(() => {});
+}
+
+function ProjectMedia({ project, controls = false, fsButton = false, className = '' }) {
+  if (project.video) {
+    return (
+      <div className={`media ${className}`}>
+        <video
+          className="mockup-video"
+          src={project.video}
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          controls={controls}
+          aria-label={`${project.name} preview`}
+        />
+        {fsButton && (
+          <button
+            type="button"
+            className="media__fs"
+            aria-label="Open video full screen"
+            title="Full screen"
+            onClick={(e) => {
+              e.stopPropagation();
+              const v = e.currentTarget.parentElement.querySelector('video');
+              if (v) requestFs(v);
+            }}
+          >
+            <Icon.Expand width="16" height="16" />
+          </button>
+        )}
+      </div>
+    );
+  }
+  return <Mockup kind={project.mockup} />;
+}
+
 function ProjectCard({ project, onOpen, index }) {
+  const playVideo = (e) => {
+    const v = e.currentTarget.querySelector('video');
+    if (v) v.play().catch(() => {});
+  };
+  const stopVideo = (e) => {
+    const v = e.currentTarget.querySelector('video');
+    if (v) {
+      v.pause();
+      v.currentTime = 0;
+    }
+  };
   return (
     <article
       className="project"
@@ -819,9 +876,13 @@ function ProjectCard({ project, onOpen, index }) {
       <button
         className="project__media"
         onClick={() => onOpen(project)}
+        onMouseEnter={playVideo}
+        onMouseLeave={stopVideo}
+        onFocus={playVideo}
+        onBlur={stopVideo}
         aria-label={`Open case study: ${project.name}`}
       >
-        <Mockup kind={project.mockup} />
+        <ProjectMedia project={project} fsButton />
         <span className="project__media-overlay">
           View case study <Icon.ArrowRight width="16" height="16" />
         </span>
@@ -858,7 +919,7 @@ function FeaturedProject({ project, onOpen }) {
   return (
     <div className="featured" data-reveal>
       <div className="featured__media">
-        <Mockup kind={project.mockup} />
+        <ProjectMedia project={project} fsButton />
         <span className="featured__badge">Featured Project</span>
       </div>
       <div className="featured__body">
@@ -1096,7 +1157,7 @@ function ProjectModal({ project, onClose }) {
         </button>
 
         <div className="modal__media">
-          <Mockup kind={project.mockup} />
+          <ProjectMedia project={project} controls fsButton />
         </div>
 
         <div className="modal__body">
