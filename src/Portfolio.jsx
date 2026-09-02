@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Portfolio.css';
+import Brand from './components/Brand.jsx';
 
 /* ============================================================
    Social links — replace with your real URLs.
@@ -774,7 +775,7 @@ function About() {
 function SkillCard({ name, accent, delay }) {
   return (
     <div className="skill" data-reveal style={{ '--d': `${delay}ms` }}>
-      <span className="skill__icon" style={{ '--c': accent }}>{name.charAt(0)}</span>
+      <span className="skill__icon" style={{ '--c': accent }}><Brand name={name} /></span>
       <span className="skill__name">{name}</span>
     </div>
   );
