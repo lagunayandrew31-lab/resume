@@ -618,7 +618,7 @@ function Hero() {
       <div className="hero__inner">
         <div className="hero__content">
           <span className="hero__badge hero-anim" style={{ '--d': '0ms' }}>
-            <span className="hero__badge-dot" /> Available for junior developer roles
+            <span className="hero__badge-dot" /> Available for virtual assistant roles
           </span>
 
           <h1 className="hero__title">
@@ -629,14 +629,13 @@ function Hero() {
           </h1>
 
           <p className="hero__headline hero-anim" style={{ '--d': '240ms' }}>
-            Junior Web Developer building modern, responsive, and scalable web
-            applications.
+            Virtual Assistant specializing in customer support, CRM data
+            management, and workflow automation.
           </p>
 
           <p className="hero__desc hero-anim" style={{ '--d': '320ms' }}>
-            IT graduate who builds web applications with modern frontend and
-            backend technologies — from React interfaces to Laravel and MySQL
-            systems. Currently exploring opportunities to grow as a developer.
+            I reply to your customers, keep your records accurate, and automate
+            your repetitive tasks so you can focus on growing your business.
           </p>
 
           <div className="hero__actions hero-anim" style={{ '--d': '400ms' }}>
@@ -738,27 +737,26 @@ function About() {
 
           <div className="about__text" data-reveal style={{ '--d': '140ms' }}>
             <p>
-              I&rsquo;m an Information Technology graduate who builds web
-              applications end to end. I enjoy taking a real problem — like a
-              barangay drowning in paper records or an ISP tracking subscribers in
-              spreadsheets — and turning it into a working system people can
-              actually use.
+              I&rsquo;m an Information Technology graduate offering virtual assistant
+              services in customer support, CRM data management, and workflow
+              automation. I reply to your customers, keep your records accurate,
+              and automate your repetitive tasks so you can focus on growing your
+              business.
             </p>
             <p>
-              On the frontend I work with HTML, CSS, JavaScript, and React to build
-              responsive interfaces. On the backend I use PHP and Laravel with
-              MySQL, and I&rsquo;m comfortable wiring up REST APIs and the tooling
-              around them (Git, GitHub, Vite, XAMPP). I also handle practical IT
-              work: troubleshooting, basic networking, and support.
+              My background spans frontend (HTML, CSS, JavaScript, React) and
+              backend (PHP, MySQL) development, plus IT support and networking. I
+              apply that mix to automating workflows, syncing CRM data, building
+              simple web tools, and troubleshooting issues with patience and clear
+              communication.
             </p>
             <p>
-              I learn quickly, work well independently, and care about writing code
-              that&rsquo;s clear and maintainable. My goal is to keep growing into a
-              strong software and backend developer — and to contribute to a team
-              that ships.
+              I learn quickly, work well independently, and meet deadlines. I care
+              about doing work that&rsquo;s accurate, reliable, and genuinely useful
+              to the people I support.
             </p>
             <div className="about__stats">
-              <div><strong>5+</strong><span>Real projects built</span></div>
+              <div><strong>5+</strong><span>Projects &amp; automations built</span></div>
               <div><strong>2&times;</strong><span>Codefest champion</span></div>
               <div><strong>2025</strong><span>Best Programmer award</span></div>
             </div>
@@ -1103,7 +1101,7 @@ function Footer() {
         <div className="footer__brand">
           <span className="nav__brand-mark">JC</span>
           <p className="footer__desc">
-            John Andrew Castillano — Junior Web Developer building modern, responsive web applications.
+            John Andrew Castillano — Virtual Assistant specializing in customer support, CRM data management, and workflow automation.
           </p>
         </div>
 
